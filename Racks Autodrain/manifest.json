@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Fin Racks Autodrain",
+    "version": "6.9",
+
+    "description": "Fin Racks Autodrain extension. Feel free to leave this running all day payslut. I want your cold hard cash for myself~",
+
+    "icons": {
+        "128": "images/FinRack5.jpg"
+    },
+    
+    "web_accessible_resources": [
+    {
+        "resources": [
+         "images/*"
+        ],
+        "matches": ["<all_urls>"]
+    }
+    ],
+    "permissions": ["tabs", "scripting", "activeTab", "alarms"],
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://throne.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
